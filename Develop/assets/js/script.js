@@ -6,12 +6,35 @@ upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N
 numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 characters = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", ":", ";", "'", "<", ">", "?", "/"];
 
-writePassword();
+
+// Start of the function to being generating password
+function generatePassword () {
+  // Asks user for character amount 
+    passwordLength = prompt("How many characters would you like to have in your password? Please choose a number between 8 and 128.");
+    // Checks criteria for password length
+      if (passwordLength === "") {
+        alert("Please enter a value between 8 and 128.");
+        return;
+    } else if (passwordLength < 8 || passwordLength > 128) {
+        alert("Please enter a number between 8 and 128");
+ 
+    // Prompts user for other criteria
+    } else {
+      chooseUpper = confirm("Do you want your password to contain upper case letters?");
+      chooseLower = confirm("Do you want your password to contain lower case letters?");
+      chooseNumbers = confirm("Do you want your password to contain numbers?");
+      chooseCharacters = confirm("Do you want your password to contain special characters?");
+    }
+  };
 
 
+  // Chosen password criteria from user
 
-function generatePassword () 
-   
+
+  // for loop to create lengthe of password
+ for (var i = 0; i < passwordLength; i++)
+    var passwordOptions = passwordCriteria[Math.floor(Math.random() * passwordCriteria.passwordLength)];
+    password.push(passwordOptions);
 
 
 
@@ -29,11 +52,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-
-
