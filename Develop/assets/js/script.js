@@ -29,30 +29,34 @@ function generatePassword () {
  
     // Prompts user for other criteria
     } else {
-      chooseUpper = confirm("Do you want your password to contain upper case letters?");
-      chooseLower = confirm("Do you want your password to contain lower case letters?");
-      chooseNumbers = confirm("Do you want your password to contain numbers?");
-      chooseSpecial = confirm("Do you want your password to contain special characters?");
+      chooseUpper = confirm("Do you want your password to contain upper case (A-Z) letters?");
+      chooseLower = confirm("Do you want your password to contain lower case (a-z) letters?");
+      chooseNumbers = confirm("Do you want your password to contain numbers (0-9)?");
+      chooseSpecial = confirm("Do you want your password to contain special characters (ex. @,#,$)?");
     }
 
   if (chooseUpper) {
     var bigLetter = upper[Math.floor(Math.random() * upper.length)];
     passwordHolder.push(bigLetter);
+    console.log(passwordHolder);
   }
 
   if (chooseLower) {
     var smallLetter = lower[Math.floor(Math.random() * lower.length)];
     passwordHolder.push(smallLetter);
+    console.log(passwordHolder);
   }
 
   if (chooseNumbers) {
     var number = numbers[Math.floor(Math.random() * numbers.length)];
     passwordHolder.push(number);
+    console.log(passwordHolder);
   }
 
   if (chooseSpecial) {
     var different = special[Math.floor(Math.random() * special.length)];
     passwordHolder.push(different);
+    console.log(passwordHolder);
   }
 
   if (!chooseUpper && !chooseLower && !chooseNumbers && !chooseSpecial) {
@@ -62,7 +66,7 @@ function generatePassword () {
 var passwordArray = [];
 
 for (i = 0; i < passwordLength; i++) {
-  var pickPassword = passwordHolder[Math.floor(Math.random () * passwordHolder.length)];
+  var pickPassword = passwordHolder[Math.floor(Math.random() * passwordHolder.length)];
   passwordArray.push(pickPassword);
 }
 
