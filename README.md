@@ -27,5 +27,7 @@ This website is meant to help a employee/user create a random and secure passwor
 - JavaScript
 
 ## Website
+https://1tbrooks1.github.io/password-generator/
 
 # Screenshot
+- ![Sreenshot](password-generator.JPG)

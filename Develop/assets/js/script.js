@@ -63,14 +63,14 @@ function generatePassword () {
     alert("You must choose at least one criteria to proceed.");
   }
 
-var passwordArray = [];
+var finalPassword = [];
 
 for (i = 0; i < passwordLength; i++) {
-  var pickPassword = passwordHolder[Math.floor(Math.random() * passwordHolder.length)];
-  passwordArray.push(pickPassword);
+  var chosenPassword = passwordHolder[Math.floor(Math.random() * passwordHolder.length)];
+  finalPassword.push(chosenPassword);
 }
 
-  return passwordArray.join("");
+  return finalPassword.join("");
 
 }
 
