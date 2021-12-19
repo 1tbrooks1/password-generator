@@ -11,7 +11,7 @@ var chooseNumbers;
 var chooseSpecial;
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var special = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", ":", ";", "'", "<", ">", "?", "/"];
 
 
@@ -36,26 +36,22 @@ function generatePassword () {
     }
 
   if (chooseUpper) {
-    var bigLetter = upper[Math.floor(Math.random() * upper.length)];
-    passwordHolder.push(bigLetter);
+    passwordHolder = passwordHolder.concat(upper);
     console.log(passwordHolder);
   }
 
   if (chooseLower) {
-    var smallLetter = lower[Math.floor(Math.random() * lower.length)];
-    passwordHolder.push(smallLetter);
+    passwordHolder = passwordHolder.concat(lower);
     console.log(passwordHolder);
   }
 
   if (chooseNumbers) {
-    var number = numbers[Math.floor(Math.random() * numbers.length)];
-    passwordHolder.push(number);
+    passwordHolder = passwordHolder.concat(numbers);
     console.log(passwordHolder);
   }
 
   if (chooseSpecial) {
-    var different = special[Math.floor(Math.random() * special.length)];
-    passwordHolder.push(different);
+    passwordHolder = passwordHolder.concat(special);
     console.log(passwordHolder);
   }
 
@@ -67,6 +63,7 @@ var finalPassword = [];
 
 for (i = 0; i < passwordLength; i++) {
   var chosenPassword = passwordHolder[Math.floor(Math.random() * passwordHolder.length)];
+  
   finalPassword.push(chosenPassword);
 }
 
